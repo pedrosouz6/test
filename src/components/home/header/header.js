@@ -22,7 +22,7 @@ export default function Header() {
                     <div className="logo">
                         <img src={Logo}/>
                     </div>
-                    <nav class={toggle ? "active" : ""}>
+                    <nav className={toggle ? "active" : ""}>
                         <ul className="list">
                             <li><a href="#benefits" onClick={menuMobile}>Benefícios</a></li>
                             <li><a href="#faq" onClick={menuMobile}>FAQ</a></li>

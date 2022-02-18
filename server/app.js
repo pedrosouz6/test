@@ -1,9 +1,34 @@
 const express = require("express");
-
+const cors = require("cors");
 const app = express();
 
-app.get("/", (req, res) => {
-    res.send("3333")
+//database
+const {connect} = require("./connection/connect");
+
+//Using the dependencies
+app.use(cors());
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Producer
+
+//getting all database user
+app.get("/all/user/producer", (req, res) => {
+    const sql = "SELECT * FROM producer_user";
+    connect.query(sql, (err, results) => {
+        res.send({data: results});
+    })
 })
+
+//adding user in database 
+app.post("add/user/producer")
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Consumer
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 app.listen(3333);

@@ -18,10 +18,13 @@ export const Section = Style.section `
         height: 100vh;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 3rem;
+        min-height: 100vh;  
     }
 
     article {
+        flex: 1 1 300px; 
         width: 100%;
         height: 100%;
         display: flex;
@@ -33,6 +36,7 @@ export const Section = Style.section `
     }
 
     form {
+        flex: 1 1 300px; 
         width: 100%;
         height: 100%;
         padding: 10px;
