@@ -72,5 +72,11 @@ export const Section = Style.section `
         cursor: pointer;
         border-radius: 2px;
     }
+
+    .message_erro p {
+        margin-top: 2rem;
+        text-align: center;
+        color: white;
+    }
     
 `
