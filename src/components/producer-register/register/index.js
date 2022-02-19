@@ -1,5 +1,6 @@
 import { Section } from "./style";
 import { useState } from "react";
+import Axios from "axios";
 
 export default function ConsumerRegister(){
     //Inputs
@@ -12,39 +13,57 @@ export default function ConsumerRegister(){
     const [ district, setDistrict ]      = useState('');
     const [ street, setStreet ]          = useState('');
     const [ number, setNumber ]          = useState('');
-    const [ reference, setReference ]    = useState('');
     
-    const [ message, setMessage ] = useState(false);
+    //Messages
+    const [ messageValidate, setMessageValidate ] = useState(false);
+    const [ messageAPI, setMessageAPI ] = useState('');
     
     const sendForm = (e) => {
         e.preventDefault();
 
         //Check the inputs
         const validate = 
-        firstName == "" || 
+        firstName == ""  || 
         secondName == "" || 
-        email  == "" || 
-        password  == "" || 
-        state  == "" || 
-        city  == "" || 
-        district  == "" || 
-        street  == "" || 
+        email  == ""     || 
+        password  == ""  || 
+        state  == ""     || 
+        city  == ""      || 
+        district  == ""  || 
+        street  == ""    || 
         number  == "";
 
         if(!validate) {
-            setMessage(false);
-            console.log(`Ola ${firstName}`)
+            addProducer();
+            setMessageValidate(false);
         } else {
-            setMessage(true);
-        }
-        
+            setMessageValidate(true);
+        }  
     }
+
+    const addProducer = () => {
+        Axios.post("http://localhost:3333/add/user/producer", {
+        firstName: firstName,
+        secondName: secondName,
+        email: email,
+        password: password,
+        state: state,
+        city: city,
+        district: district,
+        street: street,
+        number: number,
+        })
+        .then(response => response.data)
+        .then(respost => setMessageAPI(respost.message));
+    }
+
     return (
         <Section>
             <div className="center">
                 <div className="container">
                     <article>
                         <h1>Faça seu cadastro na plataforma Produtor</h1>
+                        {messageAPI}
                     </article>
                     <form onSubmit={sendForm}>
                         <div className="inputs">
@@ -102,21 +121,10 @@ export default function ConsumerRegister(){
                             value={number}
                             onChange={(e) => setNumber(e.target.value)} 
                             />
-
-
-                            <div className="input_op">
-
-                                <input type="text" 
-                                placeholder="Ponto de referência"
-                                value={reference}
-                                onChange={(e) => setReference(e.target.value)} 
-                                />
-
-                            </div>
                         </div>
 
                         {
-                            message && (
+                            messageValidate && (
                             <div className="message_erro">
                                 <p>Favor preencher o(s) campo(s) acima</p>
                             </div>
