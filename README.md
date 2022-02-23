@@ -1,4 +1,1 @@
-# LandPage(responsiva)
-
-<img src="img.png" />
-
+# Projeto em produção
