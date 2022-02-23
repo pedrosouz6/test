@@ -2,27 +2,25 @@ import Style from "styled-components";
 
 import { Styles } from "../../../styles/styles";
 
-const { 
-    background_primary,
-    background_secondary,
-    font_color,
-    height_header
- } = Styles;
+const {
+      text,
+      background_power,
+      background_normal
+  } = Styles.default;
 
  //820px
 
 export const HeaderSite =  Style.header `
       width: 100%;
-      height: ${height_header};
       position: fixed;
       top: 0;
       left: 0;
       z-index: 10;
-      background: linear-gradient(90deg, ${background_primary} 0%, ${background_secondary} 48%, ${background_primary} 100%);
+      background: linear-gradient(90deg, ${background_power} 0%, ${background_normal} 48%, ${background_power} 100%);
 
     .container {
             width: 100%;
-            height: ${height_header};
+            height: 70px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -34,14 +32,6 @@ export const HeaderSite =  Style.header `
             gap: 1.5rem;
       }
 
-      .register a {
-            padding: 10px 20px;
-            background-color: ${font_color};
-            color: ${background_primary};
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 500;
-      }
       
       .list {
             list-style: none;
@@ -49,18 +39,28 @@ export const HeaderSite =  Style.header `
             align-items: center;
             gap: 1.5rem;
       }
-
+      
       .list button {
             display: none;
       }
-
+      
       .list a {
+            color: ${text};
             text-decoration: none;
       }
-
+      
+      .register a {
+            padding: 10px 20px;
+            background-color: ${text};
+            color: ${background_power} !important;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+      }
+      
       .menu {
             background: none;
-            color: ${font_color};
+            color: ${text};
             font-size: 22pt;
             display: none;
             cursor: pointer;
@@ -83,8 +83,8 @@ export const HeaderSite =  Style.header `
                   top: 0;
                   left: 100%;
                   visibility: hidden;
-                  background: ${background_primary};
-                  border-left: 2px solid ${font_color};
+                  background: ${background_power};
+                  border-left: 2px solid ${text};
                   padding: 10px;
                   position: fixed;
                   transition: .3s ease-in-out;

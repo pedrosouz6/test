@@ -3,14 +3,15 @@ import Style from "styled-components";
 import { Styles } from "../../../styles/styles";
 
 const {
-    background_primary,
-    background_secondary
-} = Styles
+    text,
+    background_power,
+    background_normal
+} = Styles.default;
 
 export const Footerr = Style.footer `
     width: 100%;
     height: 30vh;
-    background: linear-gradient(90deg, ${background_primary} 0%, ${background_secondary} 48%, ${background_primary} 100%);
+    background: linear-gradient(90deg, ${background_power} 0%, ${background_normal} 48%, ${background_power} 100%);
     
     .container {
         width: 100%;
@@ -23,10 +24,12 @@ export const Footerr = Style.footer `
     p {
         display: flex;
         align-items: center;
+        color: ${text};
         gap: 1rem;
     }
 
     a {
+        color: ${text};
         font-size: 16pt;
     }
 

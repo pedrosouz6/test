@@ -3,14 +3,14 @@ import Style from "styled-components";
 import { Styles } from "../../../styles/styles";
 
 const {
-    font_color,
-    background_primary,
-    background_secondary
-} = Styles;
+    text,
+    background_power,
+    background_normal
+} = Styles.default;
 
 export const Section = Style.section `
     width: 100%;
-    background: linear-gradient(90deg, ${background_primary} 0%, ${background_secondary} 48%, ${background_primary} 100%);
+    background: linear-gradient(90deg, ${background_power} 0%, ${background_normal} 48%, ${background_power} 100%);
 
     .container {
         height: 250px;
@@ -19,7 +19,7 @@ export const Section = Style.section `
 
     .container h2 {
         text-align: center;
-        color: ${font_color};
+        color: ${text};
         margin-bottom: 3rem;
         position: relative;
     }
@@ -33,7 +33,7 @@ export const Section = Style.section `
         width: 10px;
         height: 30px;
         border-radius: 50px;
-        background: ${font_color};
+        background: ${text};
     }
 
     article {
@@ -47,7 +47,7 @@ export const Section = Style.section `
         width: 260px;
         height: 320px;
         padding: 15px;
-        background-color: ${font_color};
+        background-color: ${text};
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -56,7 +56,7 @@ export const Section = Style.section `
     }
 
     .cards p {
-        color: ${background_primary};
+        color: ${background_power};
         letter-spacing: .3px;
         text-indent: 10px;
     }
@@ -66,7 +66,7 @@ export const Section = Style.section `
     }
 
     .title h3 {
-        color: ${background_primary};
+        color: ${background_power};
         margin-bottom: .8rem;
     }
 

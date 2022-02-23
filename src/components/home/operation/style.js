@@ -2,19 +2,19 @@ import Style from "styled-components";
 import { Styles } from "../../../styles/styles";
 
 const {
-    font_color,
-    background_primary,
-    background_secondary
+    text,
+    background_power,
+    background_normal
 } = Styles;
 
 export const Section = Style.section `
     width: 100%;
     height: auto;
-    background-color: ${font_color};
+    background-color: ${text};
     padding: 230px 0 2rem 0;
 
     .header h2{
-        color: ${background_primary};
+        color: ${background_power};
         text-align: center;
         margin-bottom: 3rem;
     }
@@ -38,7 +38,7 @@ export const Section = Style.section `
         text-indent: 25px;
         letter-spacing: .5px;
         line-height: 25px;
-        color: ${background_primary};
+        color: ${background_power};
         font-weight: 500;
     }
 
@@ -46,15 +46,9 @@ export const Section = Style.section `
         padding: 10px 35px;
         font-size: 12pt;
         border-radius: 10px;
-        background: linear-gradient(90deg, ${background_primary} 0%, ${background_secondary} 78%, ${background_primary} 100%);
+        background: linear-gradient(90deg, ${background_power} 0%, ${background_normal} 78%, ${background_power} 100%);
         margin-top: 1.5rem;
         cursor: pointer;
-    }
-
-    @media (max-width: 1252px){
-        
-    }
-
-    
+    }  
 
 `
